@@ -14,11 +14,11 @@ public interface Command {
     /**
      *
      * @param commandArgumentsMap
-     * @param commandAguments
+     * @param commandArguments
      * @throws ParserConfigurationException
      * @throws TransformerException
      * @throws SAXException
      * @throws IOException
      */
-    void execute(Map<String,String> commandArgumentsMap, String[] commandAguments)throws ParserConfigurationException,TransformerException, SAXException, IOException;
+    void execute(Map<String,String> commandArgumentsMap, String[] commandArguments)throws ParserConfigurationException,TransformerException, SAXException, IOException;
 }

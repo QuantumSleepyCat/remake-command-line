@@ -16,8 +16,8 @@ import java.util.Map;
 public class CommandTest {
 
     private Command command=new Command() {
-        public void execute(Map<String, String> commandArgumentsMap, String[] commandAguments) {
-            System.out.println(commandAguments[0]);
+        public void execute(Map<String, String> commandArgumentsMap, String[] commandArguments) {
+            System.out.println(commandArguments[0]);
             System.out.println(commandArgumentsMap.containsKey("name"));
         }
     };
@@ -38,12 +38,12 @@ public class CommandTest {
     }
 
     @Test(expected = NullPointerException.class)
-    public void isItNullPointerExceptionIfcommandArgumentsMapIsNull() throws SAXException, ParserConfigurationException, IOException, TransformerException {
+    public void isItNullPointerExceptionIfCommandArgumentsMapIsNull() throws SAXException, ParserConfigurationException, IOException, TransformerException {
         command.execute(null,argumentsCommand);
     }
 
     @Test(expected = NullPointerException.class)
-    public void isItNullPointerExceptionIfargumentsCommandIsNull() throws SAXException, ParserConfigurationException, IOException, TransformerException {
+    public void isItNullPointerExceptionIfArgumentsCommandIsNull() throws SAXException, ParserConfigurationException, IOException, TransformerException {
         setCommandArgumentsMap();
         command.execute(commandArgumentsMap,null);
     }

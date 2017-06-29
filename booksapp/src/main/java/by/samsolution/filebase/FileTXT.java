@@ -3,6 +3,7 @@ package by.samsolution.filebase;
 
 
 import by.samsolution.commands.modelcommand.AddOptions;
+import by.samsolution.commands.modelcommand.CountOptions;
 import by.samsolution.commands.modelcommand.FindOptions;
 import by.samsolution.filebase.strategy.FileStrategy;
 
@@ -28,6 +29,20 @@ public class FileTXT implements FileStrategy {
                 }
                 reader.close();
         return students;
+    }
+
+    public int countInYear(CountOptions commandOptions, String filename, String dirname) throws IOException {
+        int counter=0;
+        BufferedReader reader=new BufferedReader(new FileReader(dirname+"/"+filename));
+        String info = null;
+        while ((info = reader.readLine()) != null) {
+            if(info.contains(commandOptions.getYear()))
+            {
+                counter++;
+            }
+        }
+        reader.close();
+        return counter;
     }
 
     public File createDirAdd(String dirname)

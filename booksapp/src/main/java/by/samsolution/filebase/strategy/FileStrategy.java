@@ -2,6 +2,7 @@ package by.samsolution.filebase.strategy;
 
 
 import by.samsolution.commands.modelcommand.AddOptions;
+import by.samsolution.commands.modelcommand.CountOptions;
 import by.samsolution.commands.modelcommand.FindOptions;
 import org.xml.sax.SAXException;
 
@@ -31,4 +32,14 @@ public interface FileStrategy {
      * @param dirname
      */
     void addStudent(AddOptions commandOptions, String filename, String dirname) throws IOException, SAXException, ParserConfigurationException, TransformerException;
+
+    /**
+     *
+     * @param commandOptions
+     * @param filename
+     * @param dirname
+     * @return
+     * @throws IOException
+     */
+    int countInYear(CountOptions commandOptions, String filename, String dirname) throws IOException;
 }
